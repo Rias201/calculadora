@@ -1,5 +1,5 @@
 from tkinter import *
-import pyperclip as clipboard
+import os, pyperclip as clipboard
 
 FONT_TYPE = "Verdana"
 FONT_SIZE = 18
@@ -55,6 +55,7 @@ def pegar():
     index += len(inp.get())
 
 index = 0
+path_to_img = os.path.join(os.path.dirname(__file__), 'img/calc.ico')
 
 main = Tk()
 # Configuración ventana principal
@@ -62,6 +63,7 @@ main.title("Calculadora")
 # main.geometry("240x360")
 main.resizable(0,0)
 main.configure(bg=MAIN_BG_COLOR)
+main.iconbitmap(path_to_img)
 
 # Donde sale el resultado
 inp = Entry(main,font=(FONT_TYPE,FONT_SIZE*2),bg=ENTRY_BG_COLOR,fg=ENTRY_FG_COLOR,width=12,justify=RIGHT)
